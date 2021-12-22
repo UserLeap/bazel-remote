@@ -167,21 +167,21 @@ container_image(
 # https://github.com/bazelbuild/rules_docker/issues/1599
 
 container_push(
-    name = "push_to_dockerhub_amd64",
+    name = "push_to_ecr_amd64",
     format = "Docker",
     image = ":bazel-remote-image",
-    registry = "index.docker.io",
-    repository = "buchgr/bazel-remote-cache",
+    registry = "public.ecr.aws/b2o4g8r3",
+    repository = "bazel-remote-cache",
     tag = "tmp-amd64",
     visibility = ["//visibility:public"],
 )
 
 container_push(
-    name = "push_to_dockerhub_arm64",
+    name = "push_to_ecr_arm64",
     format = "Docker",
     image = ":bazel-remote-image-arm64",
-    registry = "index.docker.io",
-    repository = "buchgr/bazel-remote-cache",
+    registry = "public.ecr.aws/b2o4g8r3",
+    repository = "bazel-remote-cache",
     tag = "tmp-arm64",
     visibility = ["//visibility:public"],
 )
